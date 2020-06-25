@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "GatewayAPI",
-            targets: ["GatewayAPI"]),
+            targets: ["gatewayapi"]),
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0-rc.3.5"),
@@ -17,13 +17,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "GatewayAPI",
+            name: "gatewayapi",
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "GatewayAPIKit", package: "GatewayAPIKit")
         ]),
         .testTarget(
             name: "GatewayAPITests",
-            dependencies: ["GatewayAPI"]),
+            dependencies: ["gatewayapi"]),
     ]
 )
